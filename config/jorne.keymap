@@ -82,7 +82,7 @@
 //       |      |  0  |  1  |  2  |  3  |  .  |   | VOLD| END | DOWN| PGDN| PAUS|     |
 //                          |     |     | ADJ |   | ADJ |     |     |
                         bindings = <
-   &trans &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp AMPS &kp STAR    &kp LPAR &kp LPAR  &kp PIPE &trans
+   &trans &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp AMPS &kp STAR    &kp LPAR &kp RPAR  &kp PIPE &trans
           &kp UNDER &kp F1   &kp F2 &kp F3   &kp F4   &kp F5           &kp F6    &trans   &trans      &kp DQT  &trans    &kp DEL
           &trans    &kp F7   &kp F8 &kp F9   &kp F10  &kp F11          &kp F12   &trans   &kp C_MUTE  &kp LT   &kp GT    &trans 
                     &trans &reset &trans                               &trans &trans &trans
