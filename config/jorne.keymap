@@ -92,7 +92,7 @@
 // -----------------------------------------------------------------------------------------
 // | RST | BLDR | HI  | SI  | BI  | PI  | EF  |   |     |     |     |     |     | BLDR | RST | 
 //       | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BTCLR|
-//       |      | HD  | SD  | BD  | PD  | ER  |   |     |     |     |     |     |      |
+//       |      | HD  | SD  | BD  | PD  | ER  |   |     |     |     |     |     |      | 
 //                          |     | RGB |     |   |     | OUT |     |
                         bindings = <
    &trans &kp PLUS  &trans          &trans          &trans          &trans          &trans             &none        &none        &none        &kp LBKT     &kp RBKT      &trans      &trans
