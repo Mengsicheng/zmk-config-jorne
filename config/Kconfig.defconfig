@@ -1,6 +1,6 @@
 
 
-if SHIELD_JORNE_RIGHT
+if SHIELD_JORNE_LEFT
 
 config ZMK_KEYBOARD_NAME
 	default "Jorne"
