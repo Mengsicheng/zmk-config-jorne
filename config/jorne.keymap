@@ -68,10 +68,10 @@
 //       |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
 //                    | GUI |     | SPC |   | ENT |     | ALT | 
                         bindings = <
-    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0  &kp BSLH &bt BT_SEL 2              &kp N6   &kp N7 &kp N8   &kp N9    &kp N0     &kp BSLH &bt BT_SEL 2                                       
-     &kp ENTER &kp COLON &kp RIGHT &kp DOWN &kp UP &kp LEFT                 &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp COLON  &kp ENTER               
-      &trans &bt BT_SEL 3 &kp DOT &kp COMMA &trans &trans &trans             &trans   &trans &trans   &kp COMMA &kp DOT    &bt BT_SEL 3                            
-       &rgb_ug RGB_HUD &rgb_ug RGB_SAI &rgb_ug RGB_HUI                        &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_HUD                                         
+    &kp N6   &kp N7 &kp N8   &kp N9    &kp N0     &kp BSLH &bt BT_SEL 2              &kp N6   &kp N7 &kp N8   &kp N9    &kp N0     &kp BSLH &bt BT_SEL 2                                       
+     &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp COLON  &kp ENTER                 &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp COLON  &kp ENTER               
+      &trans   &trans &trans   &kp COMMA &kp DOT    &bt BT_SEL 3             &trans   &trans &trans   &kp COMMA &kp DOT    &bt BT_SEL 3                            
+       &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_HUD                        &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_HUD                                         
                         >;
                 };
 
@@ -82,10 +82,10 @@
 //       |      |  0  |  1  |  2  |  3  |  .  |   | VOLD| END | DOWN| PGDN| PAUS|     |
 //                          |     |     | ADJ |   | ADJ |     |     |
                         bindings = <
-   &trans &kp PIPE &kp RPAR &kp LPAR &kp STAR &kp AMPS &kp CARET    &kp CARET &kp AMPS &kp STAR    &kp LPAR &kp RPAR  &kp PIPE &trans               
-    &kp DEL &trans &kp DQ &trans  T &trans &kp F6                    &kp F6    &trans   &trans      &kp DQT  &trans    &kp DEL           
-     &trans &trans &kp GT &kp LT &kp C_MUTE &trans &kp F12            &kp F12   &trans   &kp C_MUTE  &kp LT   &kp GT    &trans         
-      &trans &trans &trans                                             &trans &reset &trans 
+   &kp CARET &kp AMPS &kp STAR    &kp LPAR &kp RPAR  &kp PIPE &trans    &kp CARET &kp AMPS &kp STAR    &kp LPAR &kp RPAR  &kp PIPE &trans               
+    &kp F6    &trans   &trans      &kp DQT  &trans    &kp DEL                    &kp F6    &trans   &trans      &kp DQT  &trans    &kp DEL           
+     &kp F12   &trans   &kp C_MUTE  &kp LT   &kp GT    &trans            &kp F12   &trans   &kp C_MUTE  &kp LT   &kp GT    &trans         
+      &trans &reset &trans                                             &trans &reset &trans 
                         >;
                 };
                 adjust_layer {
@@ -95,9 +95,9 @@
 //       |      | HD  | SD  | BD  | PD  | ER  |   |     |     |     |     |     |      | 
 //                          |     | RGB |     |   |     | OUT |     |
                         bindings = <
-   &trans &trans &kp RBKT &kp LBKT &none &none &none                                    &trans &trans &none &none &none &kp LBKT &kp RBKT &trans &trans             
-    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4          &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR       
-     &kp K_POWER &kp RBRC &kp LBRC &none &none &none                                      &none &none &none &kp LBRC &kp RBRC &kp K_POWER    
+    &trans &trans &none &none &none &kp LBKT &kp RBKT &trans &trans                                    &trans &trans &none &none &none &kp LBKT &kp RBKT &trans &trans             
+    &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR          &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR       
+     &none &none &none &kp LBRC &kp RBRC &kp K_POWER                                      &none &none &none &kp LBRC &kp RBRC &kp K_POWER    
       &trans &trans &trans                                                                 &trans &trans &trans 
                         >;
                 };
