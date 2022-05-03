@@ -55,10 +55,10 @@
 //        | LALT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT |
 //                           | RSE | SPC | &lt LWR SPACE |   | LWR | BKSP | RSE | 
                         bindings = <
-    &kp Y &kp U &kp I &kp O &kp P &kp BACKSPACE &kp ENTER            &kp Y &kp U &kp I &kp O &kp P &kp BACKSPACE &kp ENTER           
-     &kp H &kp J &kp K &kp L &kp SEMI &kp ENTER                       &kp H &kp J &kp K &kp L &kp SEMI &kp ENTER     
-      &kp B &kp N &kp M &kp QMARK &kp COLON  &lt RSE SEMI              &kp B &kp N &kp M &kp QMARK &kp COLON  &lt RSE SEMI                    
-       &lt ADJ SPACE &kp RCTRL &kp RALT                                  &lt ADJ SPACE &kp RCTRL &kp RALT            
+    &kp ENTER &kp BACKSPACE &kp P &kp O &kp I &kp U &kp Y                 &kp Y &kp U &kp I &kp O &kp P &kp BACKSPACE &kp ENTER           
+     &kp ENTER &kp SEMI &kp L  &kp K  &kp J &kp H                            &kp H &kp J &kp K &kp L &kp SEMI &kp ENTER     
+      &lt RSE SEMI  &kp COLON  &kp QMARK &kp M &kp N &kp B                   &kp B &kp N &kp M &kp QMARK &kp COLON  &lt RSE SEMI                    
+       &kp RALT &kp RCTRL &lt ADJ SPACE                                    &lt ADJ SPACE &kp RCTRL &kp RALT            
                         >;
                 };
                 lower_layer {
