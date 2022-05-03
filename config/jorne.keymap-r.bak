@@ -85,7 +85,7 @@
    &kp CARET &kp AMPS &kp STAR  &kp LPAR &kp RPAR  &kp PIPE &trans    &trans &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT       
     &kp F6 &trans &trans  &kp DQT &trans &kp DEL                       &kp UNDER &kp F1   &kp F2 &kp F3   &kp F4   &kp F5           
      &kp F12 &trans &kp C_MUTE  &kp LT &kp GT &trans &trans             &kp F7   &kp F8 &kp F9   &kp F10  &kp F11         
-      &trans &trans &trans                                               &trans &reset &trans
+      &trans &trans &trans                                               &trans &reset &trans 
                         >;
                 };
                 adjust_layer {
