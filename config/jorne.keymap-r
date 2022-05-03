@@ -1,0 +1,105 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+#include <dt-bindings/led/led.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
+
+#define DEF 0
+#define LWR 1
+#define RSE 2
+#define ADJ 3
+
+&spi1 {
+	compatible = "nordic,nrf-spim";
+	/* Cannot be used together with i2c0. */
+	status = "okay";
+	mosi-pin = <6>;
+	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+	sck-pin = <5>;
+	miso-pin = <7>;
+
+	led_strip: ws2812@0 {
+		compatible = "worldsemi,ws2812-spi";
+		label = "WS2812";
+
+		/* SPI */
+		reg = <0>; /* ignored, but necessary for SPI bindings */
+		spi-max-frequency = <4000000>;
+
+		/* WS2812 */
+		chain-length = <6>; /* There are per-key RGB, but the first 6 are underglow */
+		spi-one-frame = <0x70>;
+		spi-zero-frame = <0x40>;
+		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+	};
+};
+
+/ {
+    chosen {
+		zmk,underglow = &led_strip;
+	};
+
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+// -----------------------------------------------------------------------------------------
+// |  GUI |   &lt RSE ESC  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  [   | GUI/] |
+//        |  &lt DEF GUI |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |CTRL/'|
+//        | LALT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT |
+//                           | RSE | SPC | &lt LWR SPACE |   | LWR | BKSP | RSE | 
+                        bindings = <
+    &kp Y &kp U &kp I &kp O &kp P &kp BACKSPACE &kp ENTER              &mt LWIN TAB &lt RSE ESC  &kp Q &kp W &kp E &kp R &kp T 
+     &kp H &kp J &kp K &kp L &kp SEMI &kp ENTER                         &mt LWIN TAB &kp A &kp S &kp D &kp F &kp G
+      &kp B &kp N &kp M &kp QMARK &kp COLON  &lt RSE SEMI                &kp LSHFT    &kp Z &kp X &kp C &kp V &kp B             
+       &lt ADJ SPACE &kp RCTRL &kp RALT                                   &kp CAPS &kp LALT &lt LWR SPACE          
+                        >;
+                };
+                lower_layer {
+// -----------------------------------------------------------------------------------------
+// |     |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 |
+//       |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
+//       |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
+//                    | GUI |     | SPC |   | ENT |     | ALT | 
+                        bindings = <
+    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0  &kp BSLH &bt BT_SEL 2              &trans &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                 
+     &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp COLON  &kp ENTER                &kp TAB   &bt BT_SEL 0 &kp C_SLEEP  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3          
+      &trans   &trans &trans   &kp COMMA &kp DOT &bt BT_SEL 3 &trans         &bt BT_SEL 4 &kp C_VOL_UP &trans &trans &bt BT_CLR                        
+       &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_HUD                        &kp C_VOL_DN &rgb_ug RGB_TOG &trans                                       
+                        >;
+                };
+
+                raise_layer {
+// -----------------------------------------------------------------------------------------
+// |     | NMLK |  /  |  7  |  8  |  9  |  -  |   | VOLU| HOME| PRSC| PGUP| SCLK| CLCK|     |
+//       | CTRL |  *  |  4  |  5  |  6  |  +  |   | MUT | LEFT|  UP | RGHT| INS | APP |
+//       |      |  0  |  1  |  2  |  3  |  .  |   | VOLD| END | DOWN| PGDN| PAUS|     |
+//                          |     |     | ADJ |   | ADJ |     |     |
+                        bindings = <
+   &kp CARET &kp AMPS &kp STAR  &kp LPAR &kp RPAR  &kp PIPE &trans    &trans &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT       
+    &kp F6 &trans &trans  &kp DQT &trans &kp DEL                       &kp UNDER &kp F1   &kp F2 &kp F3   &kp F4   &kp F5           
+     &kp F12 &trans &kp C_MUTE  &kp LT &kp GT &trans &trans             &kp F7   &kp F8 &kp F9   &kp F10  &kp F11         
+      &trans &trans &trans                                               &trans &reset &trans
+                        >;
+                };
+                adjust_layer {
+// -----------------------------------------------------------------------------------------
+// | RST | BLDR | HI  | SI  | BI  | PI  | EF  |   |     |     |     |     |     | BLDR | RST | 
+//       | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BTCLR|
+//       |      | HD  | SD  | BD  | PD  | ER  |   |     |     |     |     |     |      | 
+//                          |     | RGB |     |   |     | OUT |     |
+                        bindings = <
+   &none &none &none &kp LBKT &kp RBKT &trans &trans                                &trans &kp PLUS &trans &trans &trans  &trans &trans             
+    &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR     &kp MINUS &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4       
+     &none &none &none &kp LBRC &kp RBRC &kp K_POWER                                  &kp STAR  &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR    
+      &trans &trans &trans                                                             &kp FSLH &kp EQUAL &kp DOT
+                        >;
+                };
+        };
+};
