@@ -56,9 +56,9 @@
 //                           | RSE | SPC | &lt LWR SPACE |   | LWR | BKSP | RSE | 
                         bindings = <
     &kp ENTER &kp BACKSPACE &kp P &kp O &kp I &kp U &kp Y            &kp ENTER &kp BACKSPACE &kp P &kp O &kp I &kp U &kp Y           
-     &kp H &kp J &kp K &kp L &kp SEMI &kp ENTER                       &kp ENTER &kp SEMI &kp L &kp K &kp J &kp H     
-      &kp B &kp N &kp M &kp QMARK &kp COLON  &lt RSE SEMI                &kp LSHFT    &kp Z &kp X &kp C &kp V &kp B             
-       &lt ADJ SPACE &kp RCTRL &kp RALT                                   &kp CAPS &kp LALT &lt LWR SPACE          
+     &kp ENTER &kp SEMI &kp L &kp K &kp J &kp H                       &kp ENTER &kp SEMI &kp L &kp K &kp J &kp H     
+      &kp B &kp V &kp C &kp X &kp Z &kp LSHFT                          &kp B &kp V &kp C &kp X &kp Z &kp LSHFT                    
+       &lt LWR SPACE &kp LALT &kp CAPS                                  &lt LWR SPACE &kp LALT &kp CAPS            
                         >;
                 };
                 lower_layer {
