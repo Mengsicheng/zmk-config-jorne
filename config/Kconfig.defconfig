@@ -1,9 +1,9 @@
 
 
-if SHIELD_JORNE_LEFT
+if SHIELD_JORNE_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "Jorne"
+	default "Msc-Jorne"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
