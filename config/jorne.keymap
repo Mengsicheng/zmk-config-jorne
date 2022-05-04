@@ -55,7 +55,7 @@
 //        | LALT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT |
 //                           | RSE | SPC | &lt LWR SPACE |   | LWR | BKSP | RSE | 
                         bindings = <
-   &mt LWIN TAB &lt RSE ESC  &kp Q &kp W &kp E &kp R &kp T             &kp Y &kp U &kp I &kp O &kp P          &kp BACKSPACE &kp ENTER
+   &mo RSE      &lt RSE ESC  &kp Q &kp W &kp E &kp R &kp T             &kp Y &kp U &kp I &kp O &kp P          &kp BACKSPACE &mo RSE
                 &mt LWIN TAB &kp A &kp S &kp D &kp F &kp G             &kp H &kp J &kp K &kp L &kp SEMI       &kp ENTER    
                 &kp LSHFT    &kp Z &kp X &kp C &kp V &kp B             &kp B &kp N &kp M &kp QMARK &kp COLON  &lt RSE SEMI
                              &kp CAPS &kp LALT &lt LWR SPACE           &lt ADJ SPACE &kp RCTRL &kp RALT
@@ -68,9 +68,9 @@
 //       |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
 //                    | GUI |     | SPC |   | ENT |     | ALT | 
                         bindings = <
-   &trans &kp GRAVE &kp N1 &kp N2       &kp N3 &kp N4 &kp N5                                  &kp N6   &kp N7 &kp N8   &kp N9    &kp N0     &kp BSLH &bt BT_SEL 2
-          &kp TAB   &bt BT_SEL 0 &kp C_SLEEP  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3          &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp COLON  &kp ENTER
-          &trans    &bt BT_SEL 4 &kp C_VOL_UP &trans &trans &bt BT_CLR                        &trans   &trans &trans   &kp COMMA &kp DOT    &bt BT_SEL 3
+   &trans &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                        &kp N6   &kp N7 &kp N8   &kp N9    &kp N0     &kp BSLH &trans
+          &kp TAB   &trans &trans &trans &trans &trans                                        &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp COLON  &kp ENTER
+          &trans    &bt BT_SEL 4 &kp C_VOL_UP &trans &trans &bt BT_CLR                        &trans   &trans &trans   &kp COMMA &kp DOT    &trans
                     &kp C_VOL_DN &rgb_ug RGB_TOG &trans                                       &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_HUD
                         >;
                 };
@@ -82,7 +82,7 @@
 //       |      |  0  |  1  |  2  |  3  |  .  |   | VOLD| END | DOWN| PGDN| PAUS|     |
 //                          |     |     | ADJ |   | ADJ |     |     |
                         bindings = <
-   &trans &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp AMPS &kp STAR    &kp LPAR &kp RPAR  &kp PIPE &trans
+   &trans &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp AMPS &kp STAR    &kp LPAR &kp RPAR  &kp PIPE &kp TILDE
           &kp UNDER &kp F1   &kp F2 &kp F3   &kp F4   &kp F5           &kp F6    &trans   &trans      &kp DQT  &trans    &kp DEL
           &trans    &kp F7   &kp F8 &kp F9   &kp F10  &kp F11          &kp F12   &trans   &kp C_MUTE  &kp LT   &kp GT    &trans 
                     &trans &reset &trans                               &trans &trans &trans
